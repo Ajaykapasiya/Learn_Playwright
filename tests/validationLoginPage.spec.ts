@@ -5,11 +5,11 @@ test("validation of login page", async ({ page }) => {
 
   const username = page.getByPlaceholder("Admin");
 
-  const password = page.getByPlaceholder("#login-username");
+  const password = page.locator("#login-username");
 
   const login = page.getByTestId("login-submit");
 
-  const alert = page.getByPlaceholder("#login-error");
+  const alert = page.locator("#login-error");
 
   await expect(username).toHaveValue("");
   await expect(password).toHaveValue("");
