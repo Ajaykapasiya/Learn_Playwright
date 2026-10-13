@@ -23,10 +23,10 @@ test("Alert Handling", async ({ page }) => {
   });
   await page.locator("#confirm-alert-btn").click();
 
-
-  page.once('dialog', async(c)=>{
-    expect(c.type()).toBe('prompt')
-    await c.accept('Hello world')
-  })
-  await page.getByTestId('prompt-alert-btn').click()
+  page.once("dialog", async (c) => {
+    expect(c.type()).toBe("prompt");
+    await c.accept("Hello world");
+  });
+  await page.getByTestId("prompt-alert-btn").click();
+  await page.waitForTimeout(3000);
 });
