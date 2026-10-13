@@ -15,9 +15,12 @@ test("radiobuton", async ({ page }) => {
   const RadioMale = page.locator("#gender-male");
   await RadioMale.check();
   await expect(RadioMale).toBeChecked();
+  const msg = await page.locator("#radio-selection").textContent();
+  console.log(msg);
 
-  const checkBox = page.locator('#terms-checkbox')
-  await checkBox.check()
-  await expect(checkBox).toBeChecked()
-  
+  const checkBox = page.locator("#terms-checkbox");
+  await checkBox.check();
+  await expect(checkBox).toBeChecked();
+  const msg1 = await page.locator("#checkbox-selection").textContent();
+  console.log(msg1);
 });
